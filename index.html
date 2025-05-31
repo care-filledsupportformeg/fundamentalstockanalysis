@@ -3,447 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn fundamental stock analysis with in-depth research, educational videos, and resources to help you make informed investment decisions. Master financial statement analysis, key ratios, and long-term investment strategies.">
+    <meta name="keywords" content="stock analysis, fundamental analysis, investing education, financial statements, stock research, value investing">
+    <meta name="author" content="Fundamental Stock Analysis">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Fundamental Stock Analysis - In-Depth Stock Research & Education">
+    <meta property="og:description" content="Learn fundamental stock analysis with in-depth research, educational videos, and resources to help you make informed investment decisions.">
+    <meta property="og:image" content="assets/logos/fsa_logo.jpeg">
+    <meta property="og:url" content="https://fundamentalstockanalysis.vercel.app/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fundamental Stock Analysis - In-Depth Stock Research & Education">
+    <meta name="twitter:description" content="Learn fundamental stock analysis with in-depth research, educational videos, and resources to help you make informed investment decisions.">
+    <meta name="twitter:image" content="assets/logos/fsa_logo.jpeg">
+    
     <title>Fundamental Stock Analysis - In-Depth Stock Research & Education</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/logos/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Fundamental Stock Analysis",
+      "url": "https://fundamentalstockanalysis.vercel.app/",
+      "description": "Learn fundamental stock analysis with in-depth research, educational videos, and resources to help you make informed investment decisions.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://fundamentalstockanalysis.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Fundamental Stock Analysis",
+      "url": "https://fundamentalstockanalysis.vercel.app/",
+      "logo": "https://fundamentalstockanalysis.vercel.app/assets/logos/fsa_logo.jpeg",
+      "sameAs": [
+        "https://www.youtube.com/@fundamentalstockanalysis"
+      ]
+    }
+    </script>
+    
+    <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .hero-bg {
-            background-color: #1a202c; /* Dark blue-gray */
-            background-image: linear-gradient(to bottom right, #1a202c, #2d3748); /* Subtle gradient */
-        }
-        .section-title {
-            font-size: 2.5rem; /* 40px */
-            font-weight: 800; /* Extra bold */
-            margin-bottom: 2rem; /* 32px */
-            color: #1a202c; /* Darker gray for titles */
-            line-height: 1.2;
-        }
-        .card {
-            background-color: white;
-            border-radius: 0.75rem; /* 12px */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            overflow: hidden; /* Ensures content respects border radius */
-        }
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .cta-button {
-            background-color: #3b82f6; /* Tailwind blue-500 */
-            color: white;
-            padding: 0.875rem 2rem; /* 14px 32px */
-            border-radius: 0.5rem; /* 8px */
-            font-weight: 700; /* Bold */
-            text-decoration: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            display: inline-block; /* Ensures padding and transform work correctly */
-            box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
-        }
-        .cta-button:hover {
-            background-color: #2563eb; /* Tailwind blue-600 */
-            transform: translateY(-2px);
-        }
-        .cta-button-secondary {
-            background-color: transparent;
-            color: #3b82f6; /* Tailwind blue-500 */
-            border: 2px solid #3b82f6;
-            padding: 0.75rem 1.5rem;
-        }
-        .cta-button-secondary:hover {
-            background-color: #eff6ff; /* Tailwind blue-50 */
-            color: #2563eb;
-        }
-        .video-embed-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            border-radius: 0.5rem;
-            overflow: hidden;
-            background-color: #e2e8f0;
-        }
-        .video-embed-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .video-placeholder-icon { /* If not using iframe */
-            background-color: #e2e8f0;
-            aspect-ratio: 16 / 9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.5rem;
-        }
-        .social-icon {
-            font-size: 2rem; /* 32px */
-            color: #4a5568; /* Tailwind gray-600 */
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .social-icon:hover {
-            color: #3b82f6; /* Tailwind blue-500 for general hover */
-            transform: scale(1.1);
-        }
-        .navbar-sticky {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
-            backdrop-filter: blur(12px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        /* Animation for scroll */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .nav-link {
-            transition: color 0.3s ease;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #3b82f6;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        .mobile-menu-button svg {
-            transition: transform 0.3s ease;
-        }
-        .mobile-menu-button.open svg {
-            transform: rotate(90deg);
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
 
-    <nav class="navbar-sticky">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center">
-                    <a href="https://fundamentalstockanalysis.vercel.app" class="text-3xl font-extrabold text-blue-600">
-                        FSA
-                        </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 font-medium">About</a>
-                    <a href="#learn" class="nav-link text-gray-700 hover:text-blue-600 font-medium">What You'll Learn</a>
-                    <a href="#videos" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Videos</a>
-                    <a href="#podcast" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Podcast</a>
-                    <a href="#connect" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Connect</a>
-                </div>
-                <div class="hidden md:block">
-                     <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1 " target="_blank" class="cta-button text-sm">
-                        <i class="fab fa-youtube mr-2"></i>Subscribe
-                    </a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
+    <nav class="navbar navbar-sticky" aria-label="Main navigation">
+        <div class="container navbar-container">
+            <a href="/" class="navbar-logo" aria-label="Fundamental Stock Analysis Home">
+                <img src="assets/logos/fsa_logo.jpeg" alt="Fundamental Stock Analysis Logo" width="50" height="50">
+                <span>FSA</span>
+            </a>
+            
+            <div class="navbar-links" role="navigation">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#learn" class="nav-link">What You'll Learn</a>
+                <a href="#videos" class="nav-link">Videos</a>
+                <a href="#podcast" class="nav-link">Podcast</a>
+                <a href="#connect" class="nav-link">Connect</a>
             </div>
+            
+            <div class="navbar-cta">
+                <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>Subscribe</span>
+                </a>
+            </div>
+            
+            <button id="mobile-menu-button" class="mobile-menu-button" aria-expanded="false" aria-label="Toggle navigation menu">
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">About</a>
-                <a href="#learn" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">What You'll Learn</a>
-                <a href="#videos" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Videos</a>
-                <a href="#podcast" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Podcast</a>
-                <a href="#connect" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Connect</a>
-                 <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1 " target="_blank" class="block w-full text-left mt-2 px-3 py-3 rounded-md text-base font-medium cta-button">
-                    <i class="fab fa-youtube mr-2"></i>Subscribe on YouTube
+        
+        <div id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation">
+            <div class="container">
+                <a href="#about" class="mobile-menu-link">About</a>
+                <a href="#learn" class="mobile-menu-link">What You'll Learn</a>
+                <a href="#videos" class="mobile-menu-link">Videos</a>
+                <a href="#podcast" class="mobile-menu-link">Podcast</a>
+                <a href="#connect" class="mobile-menu-link">Connect</a>
+                <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-3">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>Subscribe on YouTube</span>
                 </a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-bg text-white py-24 md:py-40 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            </div>
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 animate-on-scroll">Welcome to Fundamental Stock Analysis!</h1>
-            <p class="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto animate-on-scroll" style="animation-delay: 0.2s;">
+    <header class="hero" aria-labelledby="hero-heading">
+        <div class="container hero-content">
+            <h1 id="hero-heading" class="fade-in">Welcome to Fundamental Stock Analysis!</h1>
+            <p class="fade-in">
                 Our mission is to empower you with the knowledge and tools to make informed investment decisions based on solid fundamentals, not just market noise.
             </p>
-            <div class="animate-on-scroll" style="animation-delay: 0.4s;">
-                <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1 " target="_blank" class="cta-button text-lg px-8 py-4">
-                    <i class="fab fa-youtube mr-2"></i>Subscribe & Start Learning
+            <div class="fade-in">
+                <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <span>Subscribe & Start Learning</span>
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 animate-on-scroll">
-                 <span class="text-blue-600 font-semibold tracking-wide uppercase">Our Philosophy</span>
-                <h2 class="section-title mt-2">Empowering Your Investment Decisions</h2>
+    <main id="main-content">
+        <section id="about" class="section bg-white" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-title-container fade-in">
+                    <span class="section-subtitle">Our Philosophy</span>
+                    <h2 id="about-heading" class="section-title">Empowering Your Investment Decisions</h2>
+                </div>
+                
+                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
+                    <p class="fade-in">
+                        At Fundamental Stock Analysis, we cut through the market noise to focus on what truly drives a company's long-term value. We believe that informed investors make better decisions. Whether you're new to investing or looking to deepen your analytical skills, we provide the resources and insights you need.
+                    </p>
+                    <p class="fade-in">
+                        Whether you're a beginner or an experienced investor, you'll learn how to analyze balance sheets, income statements, and cash flow reports to uncover the true value of stocks. Join us as we explore the stories behind the numbers and equip you with the tools to make informed investment decisions. This channel is perfect for anyone looking to sharpen their stock research skills and build a disciplined, long-term investing approach.
+                    </p>
+                </div>
             </div>
-            <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
-                <p class="animate-on-scroll">
-                    At Fundamental Stock Analysis, we cut through the market noise to focus on what truly drives a company's long-term value. We believe that informed investors make better decisions. Whether you're new to investing or looking to deepen your analytical skills, we provide the resources and insights you need.
-                </p>
-                <p class="animate-on-scroll">
-                    Whether you’re a beginner or an experienced investor, you’ll learn how to analyze balance sheets, income statements, and cash flow reports to uncover the true value of stocks. Join us as we explore the stories behind the numbers and equip you with the tools to make informed investment decisions. This channel is perfect for anyone looking to sharpen their stock research skills and build a disciplined, long-term investing approach.
-                </p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="learn" class="py-16 md:py-24 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 animate-on-scroll">
-                <span class="text-blue-600 font-semibold tracking-wide uppercase">Core Curriculum</span>
-                <h2 class="section-title mt-2">Master the Essentials of Stock Analysis</h2>
+        <section id="learn" class="section bg-light" aria-labelledby="learn-heading">
+            <div class="container">
+                <div class="section-title-container fade-in">
+                    <span class="section-subtitle">Core Curriculum</span>
+                    <h2 id="learn-heading" class="section-title">Master the Essentials of Stock Analysis</h2>
+                </div>
+                
+                <div class="features-grid mt-10">
+                    <div class="feature-card fade-in">
+                        <img src="assets/icons/financial-analytics.png" alt="Financial statement analysis" class="feature-icon" width="80" height="80">
+                        <h3 class="feature-title">In-Depth Analysis</h3>
+                        <p class="feature-text">Explore company breakdowns and master financial statement analysis (balance sheets, income, cash flow).</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in" style="animation-delay: 0.1s;">
+                        <img src="assets/icons/line-graph.png" alt="Key metrics and ratios" class="feature-icon" width="80" height="80">
+                        <h3 class="feature-title">Key Ratios & Metrics</h3>
+                        <p class="feature-text">Understand and apply P/E, P/B, ROE, DCF, and other critical valuation tools.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in" style="animation-delay: 0.2s;">
+                        <img src="assets/icons/competitive-advantage.png" alt="Competitive advantage analysis" class="feature-icon" width="80" height="80">
+                        <h3 class="feature-title">Competitive Advantages</h3>
+                        <p class="feature-text">Identify economic moats, industry trends, and sustainable competitive edges.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in" style="animation-delay: 0.3s;">
+                        <img src="assets/icons/management.png" alt="Management and governance" class="feature-icon" width="80" height="80">
+                        <h3 class="feature-title">Management & Governance</h3>
+                        <p class="feature-text">Evaluate leadership quality, corporate governance, and economic factors impacting companies.</p>
+                    </div>
+                    
+                    <div class="feature-card fade-in" style="animation-delay: 0.4s;">
+                        <img src="assets/icons/long-term.png" alt="Long-term investment strategies" class="feature-icon" width="80" height="80">
+                        <h3 class="feature-title">Long-Term Strategies</h3>
+                        <p class="feature-text">Develop disciplined, long-term value investing approaches for sustainable growth.</p>
+                    </div>
+                </div>
+                
+                <p class="text-center mt-12 text-lg text-gray-600 fade-in">
+                    Perfect for anyone looking to sharpen their stock research skills and build a disciplined, long-term investing approach.
+                </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-                <div class="card p-8 text-center animate-on-scroll">
-                    <div class="text-5xl text-blue-500 mb-6"><i class="fas fa-file-invoice-dollar"></i></div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">In-Depth Analysis</h3>
-                    <p class="text-gray-600">Explore company breakdowns and master financial statement analysis (balance sheets, income, cash flow).</p>
-                </div>
-                <div class="card p-8 text-center animate-on-scroll" style="animation-delay: 0.1s;">
-                    <div class="text-5xl text-blue-500 mb-6"><i class="fas fa-calculator"></i></div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Key Ratios & Metrics</h3>
-                    <p class="text-gray-600">Understand and apply P/E, P/B, ROE, DCF, and other critical valuation tools.</p>
-                </div>
-                <div class="card p-8 text-center animate-on-scroll" style="animation-delay: 0.2s;">
-                    <div class="text-5xl text-blue-500 mb-6"><i class="fas fa-search-dollar"></i></div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Competitive Advantages</h3>
-                    <p class="text-gray-600">Identify economic moats, industry trends, and sustainable competitive edges.</p>
-                </div>
-                <div class="card p-8 text-center animate-on-scroll lg:col-start-1 lg:col-end-3 lg:mx-auto md:col-span-2 lg:col-span-1" style="animation-delay: 0.3s;">
-                    <div class="text-5xl text-blue-500 mb-6"><i class="fas fa-users-cog"></i></div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Management & Governance</h3>
-                    <p class="text-gray-600">Evaluate leadership quality, corporate governance, and economic factors impacting companies.</p>
-                </div>
-                <div class="card p-8 text-center animate-on-scroll md:col-start-auto lg:col-start-auto" style="animation-delay: 0.4s;">
-                     <div class="text-5xl text-blue-500 mb-6"><i class="fas fa-seedling"></i></div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">Long-Term Strategies</h3>
-                    <p class="text-gray-600">Develop disciplined, long-term value investing approaches for sustainable growth.</p>
-                </div>
-            </div>
-             <p class="text-center mt-12 text-lg text-gray-600 animate-on-scroll">
-                Perfect for anyone looking to sharpen their stock research skills and build a disciplined, long-term investing approach.
-            </p>
-        </div>
-    </section>
+        </section>
 
-    <section id="videos" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-12 animate-on-scroll">
-                <span class="text-blue-600 font-semibold tracking-wide uppercase">Our Analyses</span>
-                <h2 class="section-title mt-2">Explore Our Latest Videos</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-                <div class="card animate-on-scroll">
-                    <div class="video-placeholder-icon">
-                        <i class="fab fa-youtube text-7xl text-red-500"></i>
-                        <!-- Or use an iframe for actual embed: 
-                        <div class="video-embed-container">
-                            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <section id="videos" class="section bg-white" aria-labelledby="videos-heading">
+            <div class="container">
+                <div class="section-title-container fade-in">
+                    <span class="section-subtitle">Our Analyses</span>
+                    <h2 id="videos-heading" class="section-title">Explore Our Latest Videos</h2>
+                </div>
+                
+                <div class="video-grid mt-10">
+                    <div class="video-card fade-in">
+                        <div class="video-container" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Honeywell (HON) Deep Dive">
+                            <div class="video-placeholder">
+                                <img src="assets/images/video-honeywell.jpg" alt="Honeywell (HON) Stock Analysis Thumbnail" class="video-thumbnail">
+                                <div class="video-play-button">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                </div>
+                            </div>
                         </div>
-                        -->
+                        <div class="video-content">
+                            <h3 class="video-title">Honeywell (HON) Deep Dive</h3>
+                            <p class="video-description">A complete fundamental analysis of Honeywell's business, financials, and future.</p>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock" aria-hidden="true"></i> 14:45</span>
+                                <span><i class="far fa-eye" aria-hidden="true"></i> 8 views</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Honeywell (HON) Deep Dive</h3>
-                        <p class="text-gray-600 text-sm mb-4">A complete fundamental analysis of Honeywell's business, financials, and future.</p>
-                        <a href="https://www.youtube.com/@fundamentalstockanalysis" target="_blank" class="text-blue-600 hover:text-blue-700 font-semibold">Watch Video <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
+                    
+                    <div class="video-card fade-in" style="animation-delay: 0.1s;">
+                        <div class="video-container" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="TSMC (TSM) Complete Stock Analysis">
+                            <div class="video-placeholder">
+                                <img src="assets/images/video-tsmc.jpg" alt="TSMC (TSM) Stock Analysis Thumbnail" class="video-thumbnail">
+                                <div class="video-play-button">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3 class="video-title">TSMC (TSM): Complete Stock Analysis</h3>
+                            <p class="video-description">An in-depth look at Taiwan Semiconductor Manufacturing Company's fundamentals.</p>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock" aria-hidden="true"></i> 14:26</span>
+                                <span><i class="far fa-eye" aria-hidden="true"></i> 7 views</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card fade-in" style="animation-delay: 0.2s;">
+                        <div class="video-container" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="ASML vs LRCX: Technical & Fundamental Analysis">
+                            <div class="video-placeholder">
+                                <img src="assets/images/video-asml.jpg" alt="ASML vs LRCX Analysis Thumbnail" class="video-thumbnail">
+                                <div class="video-play-button">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3 class="video-title">ASML vs LRCX: Technical & Fundamental Analysis</h3>
+                            <p class="video-description">Comparing two semiconductor equipment giants to determine the better investment.</p>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock" aria-hidden="true"></i> 13:43</span>
+                                <span><i class="far fa-eye" aria-hidden="true"></i> 8 views</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card animate-on-scroll" style="animation-delay: 0.1s;">
-                    <div class="video-placeholder-icon">
-                         <i class="fab fa-youtube text-7xl text-red-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">ASML vs LRCX: Semi Showdown</h3>
-                        <p class="text-gray-600 text-sm mb-4">Technical and fundamental breakdown of these semiconductor giants.</p>
-                        <a href="https://www.youtube.com/@fundamentalstockanalysis" target="_blank" class="text-blue-600 hover:text-blue-700 font-semibold">Watch Video <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                    </div>
-                </div>
-                <div class="card animate-on-scroll" style="animation-delay: 0.2s;">
-                     <div class="video-placeholder-icon">
-                         <i class="fab fa-youtube text-7xl text-red-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Understanding P/E Ratios</h3>
-                        <p class="text-gray-600 text-sm mb-4">A beginner-friendly guide to using the Price-to-Earnings ratio effectively.</p>
-                        <a href="https://www.youtube.com/@fundamentalstockanalysis" target="_blank" class="text-blue-600 hover:text-blue-700 font-semibold">Watch Video <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                    </div>
+                
+                <div class="text-center mt-10 fade-in">
+                    <a href="https://www.youtube.com/@fundamentalstockanalysis" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <span>View All Videos</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
-            <div class="text-center mt-16 animate-on-scroll">
-                <a href="https://www.youtube.com/@fundamentalstockanalysis/videos" target="_blank" class="cta-button cta-button-secondary text-lg">
-                    View All Videos on YouTube
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="podcast" class="py-16 md:py-24 bg-gray-800 text-gray-200">
-        <div class="container mx-auto px-6 text-center">
-            <div class="animate-on-scroll">
-                <span class="text-blue-400 font-semibold tracking-wide uppercase">Audio Insights</span>
-                <h2 class="section-title mt-2 text-white">Tune Into Our Podcast</h2>
+        <section id="podcast" class="section bg-light" aria-labelledby="podcast-heading">
+            <div class="container">
+                <div class="section-title-container fade-in">
+                    <span class="section-subtitle">Audio Content</span>
+                    <h2 id="podcast-heading" class="section-title">Listen to Our Podcast</h2>
+                </div>
+                
+                <div class="card-grid mt-10">
+                    <div class="card fade-in">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-podcast" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title">Market Insights Weekly</h3>
+                            <p class="card-text">Our weekly roundup of market movements, economic indicators, and key events affecting your investments.</p>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-secondary">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card fade-in" style="animation-delay: 0.1s;">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-microphone-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title">Deep Dive Interviews</h3>
+                            <p class="card-text">In-depth conversations with industry experts, successful investors, and company executives.</p>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-secondary">Browse Episodes</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title">Investing Education Series</h3>
+                            <p class="card-text">Step-by-step audio guides to master fundamental analysis concepts and techniques.</p>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-secondary">Start Learning</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-             <div class="max-w-xl mx-auto text-center my-8 animate-on-scroll" style="animation-delay: 0.1s;">
-                <img src="https://placehold.co/150x150/3b82f6/FFFFFF?text=FSA+Podcast" alt="FSA Podcast Logo" class="mx-auto mb-6 rounded-lg shadow-xl w-36 h-36 md:w-44 md:h-44 border-4 border-gray-700">
-            </div>
-            <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto mb-10 animate-on-scroll" style="animation-delay: 0.2s;">
-                Go deeper with "FSA Uncovered: Stock & Sector Examination". Each episode, we put individual stocks under the microscope or zoom out to analyze key groups and sectors through meticulous fundamental examination.
-            </p>
-            <div class="animate-on-scroll" style="animation-delay: 0.3s;">
-                <a href="https://www.youtube.com/watch?v=cij6bXie5u8&list=PLJPEy6E45G9xSwX5MKaQ6TNG89blLTbqh" target="_blank" class="cta-button bg-blue-500 hover:bg-blue-400 text-lg">
-                    <i class="fas fa-podcast mr-2"></i>Listen to the Podcast
-                </a>
-                <p class="mt-4 text-sm text-gray-400">(Available on Apple Podcasts, Spotify, etc.)</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="connect" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-6 text-center">
-            <div class="animate-on-scroll">
-                <span class="text-blue-600 font-semibold tracking-wide uppercase">Stay Connected</span>
-                <h2 class="section-title mt-2">Join the Conversation</h2>
+        <section id="connect" class="section bg-white" aria-labelledby="connect-heading">
+            <div class="container">
+                <div class="section-title-container fade-in">
+                    <span class="section-subtitle">Join Our Community</span>
+                    <h2 id="connect-heading" class="section-title">Connect With Us</h2>
+                </div>
+                
+                <div class="card-grid mt-10">
+                    <div class="card fade-in">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title">YouTube Channel</h3>
+                            <p class="card-text">Subscribe for regular video updates, in-depth stock analyses, and educational content.</p>
+                            <div class="card-footer">
+                                <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Subscribe Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card fade-in" style="animation-delay: 0.1s;">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title">Newsletter</h3>
+                            <p class="card-text">Get weekly insights, stock ideas, and exclusive content delivered straight to your inbox.</p>
+                            <div class="card-footer">
+                                <form class="newsletter-form">
+                                    <div class="form-group">
+                                        <label for="email" class="sr-only">Email address</label>
+                                        <input type="email" id="email" placeholder="Your email address" required class="form-input">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-content">
+                            <div class="card-icon">
+                                <i class="fas fa-comments" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-title">Community Forum</h3>
+                            <p class="card-text">Join discussions with fellow investors, share ideas, and ask questions in our community.</p>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-secondary">Join Community</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-lg text-gray-700 leading-relaxed max-w-xl mx-auto mb-12 animate-on-scroll" style="animation-delay: 0.1s;">
-                Follow us on your favorite platforms to stay updated with our latest analyses, tips, and discussions.
-            </p>
-            <div class="flex justify-center space-x-6 sm:space-x-8 md:space-x-10 animate-on-scroll" style="animation-delay: 0.2s;">
-                <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1 " target="_blank" class="social-icon hover:text-red-600" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://twitter.com/fundamenta1s" target="_blank" class="social-icon hover:text-sky-500" aria-label="X (Twitter)">
-                    <i class="fab fa-twitter"></i> </a>
-                <a href="https://www.facebook.com/fundamentalstockanalysis" target="_blank" class="social-icon hover:text-blue-700" aria-label="Facebook">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/fundamentalstockanalysis" target="_blank" class="social-icon hover:text-pink-600" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-16">
-        <div class="container mx-auto px-6 text-center">
-            <a href="https://fundamentalstockanalysis.vercel.app" class="text-2xl font-bold text-blue-500 mb-6 inline-block">Fundamental Stock Analysis</a>
-            <p class="mb-4">Empowering investors through education and in-depth analysis.</p>
-            <div class="flex justify-center space-x-6 mb-8">
-                 <a href="#about" class="hover:text-blue-400">About</a>
-                 <a href="https://www.youtube.com/@fundamentalstockanalysis/videos" target="_blank" class="hover:text-blue-400">All Videos</a>
-                 <a href="https://www.youtube.com/watch?v=cij6bXie5u8&list=PLJPEy6E45G9xSwX5MKaQ6TNG89blLTbqh" target="_blank" class="hover:text-blue-400">Podcast</a>
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading" class="cta-title fade-in">Ready to Master Fundamental Analysis?</h2>
+                <p class="cta-text fade-in">
+                    Join thousands of investors who are learning to make better investment decisions through our educational content.
+                </p>
+                <div class="cta-buttons fade-in">
+                    <a href="https://www.youtube.com/@fundamentalstockanalysis?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                        <span>Subscribe on YouTube</span>
+                    </a>
+                    <a href="#connect" class="btn btn-primary">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Join Newsletter</span>
+                    </a>
+                </div>
             </div>
-            <p class="mb-2 text-sm">© <span id="currentYear"></span> Fundamental Stock Analysis. All Rights Reserved.</p>
-            <p class="text-xs text-gray-500 leading-relaxed max-w-3xl mx-auto">
-                Disclaimer: The information provided on this website and our associated channels is for educational and informational purposes only and should not be considered financial advice. Investing in stocks involves risk, including the loss of principal. Always do your own research or consult with a qualified financial advisor before making any investment decisions. Our website: https://fundamentalstockanalysis.vercel.app
-            </p>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <a href="/" class="footer-logo">
+                        <img src="assets/logos/fsa_logo.jpeg" alt="Fundamental Stock Analysis Logo" width="40" height="40">
+                        <span>FSA</span>
+                    </a>
+                    <p class="footer-text">
+                        Empowering investors with the knowledge and tools to make informed investment decisions based on solid fundamentals.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@fundamentalstockanalysis" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#learn">What You'll Learn</a></li>
+                        <li><a href="#videos">Videos</a></li>
+                        <li><a href="#podcast">Podcast</a></li>
+                        <li><a href="#connect">Connect</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Beginner's Guide</a></li>
+                        <li><a href="#">Financial Glossary</a></li>
+                        <li><a href="#">Stock Screener</a></li>
+                        <li><a href="#">Valuation Tools</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2025</span> Fundamental Stock Analysis. All rights reserved.</p>
+                <p class="mt-1">
+                    <small>
+                        Icons by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a> and 
+                        <a href="https://www.freepik.com" target="_blank" rel="noopener noreferrer">Freepik</a>
+                    </small>
+                </p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuButton.addEventListener('click', () => {
-            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
-            menuButton.setAttribute('aria-expanded', !isExpanded);
-            mobileMenu.classList.toggle('hidden');
-            menuButton.classList.toggle('open');
-        });
-
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuButton.setAttribute('aria-expanded', 'false');
-                mobileMenu.classList.add('hidden');
-                menuButton.classList.remove('open');
-            });
-        });
-        
-        // Smooth scrolling for navigation links (all internal links)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                // Ensure it's a valid ID selector and not just "#"
-                if (href.length > 1 && document.querySelector(href)) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(href);
-                    const navbarHeight = document.querySelector('nav').offsetHeight || 70; // Fallback height
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-        
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                } else if (href === "#") { // Prevent default for href="#"
-                     e.preventDefault();
-                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Scroll Animations
-        const scrollElements = document.querySelectorAll('.animate-on-scroll');
-        const elementInView = (el, dividend = 1) => {
-            const elementTop = el.getBoundingClientRect().top;
-            return (
-                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
-            );
-        };
-        const displayScrollElement = (element) => {
-            element.classList.add('is-visible');
-        };
-        const hideScrollElement = (element) => {
-            element.classList.remove('is-visible');
-        };
-        const handleScrollAnimation = () => {
-            scrollElements.forEach((el) => {
-                if (elementInView(el, 1.25)) { // Adjust 1.25 for when animation triggers
-                    displayScrollElement(el);
-                } 
-                // Optional: To re-hide when scrolling up, uncomment below
-                // else {
-                //     hideScrollElement(el);
-                // }
-            });
-        };
-        window.addEventListener('scroll', () => {
-            handleScrollAnimation();
-        });
-        // Trigger on load for elements already in view
-        handleScrollAnimation();
-
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
