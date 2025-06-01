@@ -121,3 +121,45 @@ window.addEventListener('load', () => {
 window.addEventListener('scroll', () => {
     handleScrollAnimation();
 });
+
+// Newsletter Form Handling
+const newsletterForm = document.getElementById('newsletter-form');
+const successMessage = document.getElementById('success-message');
+
+if (newsletterForm && successMessage) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent default form submission
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const emailValue = emailInput ? emailInput.value.trim() : '';
+
+        // Simple email validation regex
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailValue || !emailPattern.test(emailValue)) {
+            // Invalid email
+            successMessage.textContent = 'Please enter a valid email address.';
+            successMessage.style.color = 'red';
+            successMessage.style.display = 'block';
+
+            // Hide error message after 3 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+                successMessage.style.color = ''; // Reset color
+            }, 3000);
+        } else {
+            // Valid email - display success message
+            successMessage.textContent = 'Thank you for subscribing!';
+            successMessage.style.color = ''; // Reset color if previously an error
+            successMessage.style.display = 'block';
+
+            if (emailInput) {
+                emailInput.value = ''; // Clear the input field
+            }
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+    });
+}
